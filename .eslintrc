@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "vue/setup-compiler-macros": true
+  },
+  "extends": ["prettier"],
+  "plugins": ["import"]
+}
