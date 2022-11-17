@@ -4,7 +4,9 @@
     :class="[`calculator-button__${bgColor}`]"
     @click="$emit('click')"
   >
-    {{ label }}
+    <slot name="label">
+      {{ label }}
+    </slot>
   </button>
 </template>
 
@@ -15,7 +17,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  bgColor: 'dark-grey'
+  bgColor: 'dark-blue'
 })
 
 const $emit = defineEmits<{

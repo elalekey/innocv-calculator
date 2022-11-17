@@ -25,16 +25,16 @@ describe('CalculatorButton.vue', () => {
     expect(label).toEqual('+')
   })
 
-  test('Should have a "orange" background color', () => {
+  test('Should have a "green" background color', () => {
     wrapper = mount(CalculatorButton, {
       props: {
         label: '+',
-        bgColor: 'orange'
+        bgColor: 'green'
       },
       global: {}
     })
 
-    const bgColor = wrapper.classes('calculator-button__orange')
+    const bgColor = wrapper.classes('calculator-button__green')
     expect(bgColor).toBeTruthy()
   })
 
