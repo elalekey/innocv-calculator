@@ -1,15 +1,41 @@
 {
   "root": true,
+  "parser": "vue-eslint-parser",
   "parserOptions": {
-    "ecmaVersion": 2022,
-    "sourceType": "module"
+    "warnOnUnsupportedTypeScriptVersion": false,
+    "parser": {
+      // Script parser for `<script>`
+      "js": "espree",
+
+      // Script parser for `<script lang="ts">`
+      "ts": "@typescript-eslint/parser",
+
+      // Script parser for vue directives (e.g. `v-if=` or `:attribute=`)
+      // and vue interpolations (e.g. `{{variable}}`).
+      // If not specified, the parser determined by `<script lang ="...">` is used.
+      "<template>": "espree"
+    }
+  },
+  "rules": {
+    "no-console": "error",
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        "singleline": {
+          "max": 1
+        },
+        "multiline": {
+          "max": 1
+        }
+      }
+    ],
+    "vue/singleline-html-element-content-newline": "off"
   },
   "env": {
     "es6": true,
     "browser": true,
-    "node": true,
-    "vue/setup-compiler-macros": true
+    "node": true
   },
-  "extends": ["prettier"],
+  "extends": ["prettier", "plugin:vue/vue3-recommended"],
   "plugins": ["import"]
 }
