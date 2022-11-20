@@ -1,6 +1,7 @@
 import { mount, VueWrapper } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
-import CalculatorButton from '@/src/components/atoms/calculator-button/CalculatorButton.vue'
+import { TYPES } from '@/types/calculator'
+import CalculatorButton from '@/components/atoms/calculator-button/CalculatorButton.vue'
 
 let wrapper: VueWrapper
 let props = {
@@ -29,7 +30,7 @@ describe('CalculatorButton.vue', () => {
     wrapper = mount(CalculatorButton, {
       props: {
         label: '+',
-        bgColor: 'green'
+        action: TYPES.OPERATOR
       },
       global: {}
     })
