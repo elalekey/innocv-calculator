@@ -1,7 +1,7 @@
 <template>
   <button
     class="calculator-button"
-    :class="[`calculator-button__${bgColor}`]"
+    :class="[`calculator-button__${bgColor}`, `calculator-button--${size}`]"
     @click="$emit('click')"
   >
     <slot name="label">
@@ -14,10 +14,12 @@
 interface Props {
   label: string
   bgColor?: string
+  size?: string
 }
 
 withDefaults(defineProps<Props>(), {
-  bgColor: 'dark-blue'
+  bgColor: 'dark-blue',
+  size: 'small'
 })
 
 const $emit = defineEmits<{
