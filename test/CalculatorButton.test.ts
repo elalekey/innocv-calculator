@@ -3,7 +3,7 @@ import { describe, expect, test } from 'vitest'
 import { TYPES } from '@/types/calculator'
 import CalculatorButton from '@/components/atoms/calculator-button/CalculatorButton.vue'
 
-let wrapper: VueWrapper
+let wrapper: VueWrapper<any>
 let props = {
   label: '+'
 }
