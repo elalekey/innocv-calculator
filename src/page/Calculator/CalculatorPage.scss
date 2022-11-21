@@ -1,0 +1,43 @@
+.calculator-page {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 225px;
+  @include tablet {
+    max-width: 305px;
+  }
+  &__history,
+  &__result {
+    width: 100%;
+    padding: 0 8px;
+    text-align: right;
+    font-size: 48px;
+    line-height: 72px;
+    @include tablet {
+      padding: 0 16px;
+      font-size: 64px;
+    }
+  }
+  &__history {
+    height: auto;
+    word-break: break-all;
+  }
+  &__result {
+    font-size: 32px;
+    padding: 0 24px;
+    opacity: 0.6;
+  }
+  &--text-sm {
+    font-size: 32px;
+  }
+  &--text-xs {
+    font-size: 24px;
+  }
+  &--text-xxs {
+    font-size: 18px;
+  }
+  /* input[type='number'] {
+    display: none;
+  } */
+}
