@@ -14,7 +14,7 @@ export default defineConfig({
 
       {
         find: /@\//,
-        replacement: join(__dirname, './')
+        replacement: join(__dirname, './src/')
       }
     ]
   },
