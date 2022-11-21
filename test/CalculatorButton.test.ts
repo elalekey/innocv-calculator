@@ -1,8 +1,9 @@
 import { mount, VueWrapper } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
-import CalculatorButton from '@/src/components/atoms/calculator-button/CalculatorButton.vue'
+import { TYPES } from '@/types/calculator'
+import CalculatorButton from '@/components/atoms/calculator-button/CalculatorButton.vue'
 
-let wrapper: VueWrapper
+let wrapper: VueWrapper<any>
 let props = {
   label: '+'
 }
@@ -25,16 +26,16 @@ describe('CalculatorButton.vue', () => {
     expect(label).toEqual('+')
   })
 
-  test('Should have a "orange" background color', () => {
+  test('Should have a "green" background color', () => {
     wrapper = mount(CalculatorButton, {
       props: {
         label: '+',
-        bgColor: 'orange'
+        action: TYPES.OPERATOR
       },
       global: {}
     })
 
-    const bgColor = wrapper.classes('calculator-button__orange')
+    const bgColor = wrapper.classes('calculator-button__green')
     expect(bgColor).toBeTruthy()
   })
 
