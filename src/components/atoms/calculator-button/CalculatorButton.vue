@@ -2,6 +2,7 @@
   <button
     class="calculator-button"
     :class="[`calculator-button__${returnBgButton()}`, `calculator-button--${size}`]"
+    :disabled="disabled"
     @click="$emit('click')"
   >
     <slot name="label">
@@ -16,11 +17,13 @@ interface Props {
   label: string
   action?: string
   size?: string
+  disabled?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   action: TYPES.NUMBER,
-  size: 'small'
+  size: 'small',
+  disabled: false
 })
 
 const $emit = defineEmits<{
