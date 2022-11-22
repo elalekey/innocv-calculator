@@ -109,7 +109,7 @@ const handleClick = (element: Element) => {
 const handleOperator = (operator: string, label: string) => {
   const lastValue = history.value[history.value.length - 1]
   lastNumber.value = -1
-  if (lastValue !== label) {
+  if (lastValue !== label && history.value !== '') {
     // If the last button pressed is different at the current operator will run the process
     updateHistory(label)
     if (operator !== OPERATORS.PERCENTAGE && operator !== OPERATORS.SIGNCHANGE) {
