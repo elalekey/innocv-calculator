@@ -39,8 +39,34 @@ describe('CalculatorButton.vue', () => {
     expect(bgColor).toBeTruthy()
   })
 
+  test('Should have a "grey" background color', () => {
+    wrapper = mount(CalculatorButton, {
+      props: {
+        label: '+',
+        action: TYPES.CLEAR
+      },
+      global: {}
+    })
+
+    const bgColor = wrapper.classes('calculator-button__grey')
+    expect(bgColor).toBeTruthy()
+  })
+
   test('Should emit a "click" event when button is clicked', async () => {
     await wrapper.trigger('click')
     expect(wrapper.emitted('click')).toBeTruthy()
+  })
+
+  test('Should be "disabled" if prop is true', async () => {
+    wrapper = mount(CalculatorButton, {
+      props: {
+        label: '+',
+        disabled: true
+      },
+      global: {}
+    })
+
+    const disabled = wrapper.attributes().disabled
+    expect(disabled).toEqual('')
   })
 })
