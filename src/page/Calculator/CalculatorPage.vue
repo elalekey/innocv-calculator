@@ -18,6 +18,7 @@
     <calculator-button
       v-for="(item, index) in ELEMENTS"
       :key="`${item.label}-${index}`"
+      :data-test-id="`button-${item.label}`"
       :label="item.label"
       :action="item.type"
       :size="item.label === '0' ? 'medium' : 'small'"
@@ -105,10 +106,7 @@ const handleClick = (element: Element) => {
     case TYPES.EQUAL:
       result.value = applyOperation(lastOperator.value, firstNumber.value, secondNumber.value)
       history.value = result.value.toString()
-      resetOperations()
-      return
-    default:
-      return
+      return resetOperations()
   }
 }
 

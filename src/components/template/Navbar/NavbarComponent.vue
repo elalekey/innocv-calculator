@@ -16,6 +16,7 @@
           <MoonIcon />
         </div>
         <input
+          data-test-id="checkbox"
           type="checkbox"
           :checked="isDark"
           @click="toggleDark()"
