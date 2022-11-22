@@ -50,11 +50,14 @@ const formatResult = computed(() => {
   return getFormattedNumber(roundResult)
 })
 
+// Return a disabled state if decimal button was the last button pressed.
 const returnDisabledButton = (label: string) => {
   return label === '.' && hasDecimal.value
 }
 
 // Methods
+
+// Return a float number with decimal or not.
 const returnNumbers = (value: number, newValue: string) => {
   if (hasDecimal.value) {
     let newResult = `${value}.${newValue}`
@@ -69,6 +72,8 @@ const returnNumbers = (value: number, newValue: string) => {
   return parseFloat(`${value}${newValue}`)
 }
 
+// Save a number depending if an operator was pressed or not (if not, data will saved in firstNumber variable)
+// @params label {string} -> 0-9
 const handleNumber = (label: string) => {
   updateHistory(label)
   if (!lastOperator.value) {
@@ -83,6 +88,7 @@ const handleNumber = (label: string) => {
   }
 }
 
+// Switch case to call a function depending on the button pressed (write a number, logs, do an operations, etc.)
 const handleClick = (element: Element) => {
   const { type, label, operator } = element
   switch (type) {
@@ -132,11 +138,13 @@ const handleOperator = (operator: string, label: string) => {
   }
 }
 
+// When an operator is pressed, result will be calculated and assigned to the first number.
 const resetOperations = () => {
   firstNumber.value = result.value
   secondNumber.value = 0
 }
 
+// When CLEAR button type is pressed, the calculator will be reseted
 const clearOperations = () => {
   firstNumber.value = 0
   secondNumber.value = 0
@@ -147,6 +155,7 @@ const clearOperations = () => {
   history.value = ''
 }
 
+// Logs
 const updateHistory = (newValue: number | string) => {
   history.value = `${history.value}${newValue}`
 }
