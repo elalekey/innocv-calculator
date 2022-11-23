@@ -53,3 +53,19 @@ This will tell us the code-coverage in the terminal and will create a coverage f
 ## Known errors
 
  At the moment of obtaining a code-coverage it will mark that there is a line not covered in the 111 of CalculatorPage, this is a library error, specifically C8 with Vitest, caused by the closing of braces.
+ 
+ 
+ File                               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------------------|---------|----------|---------|---------|-------------------
+All files                           |   99.74 |    98.48 |     100 |   99.74 |                   
+ components/atoms/calculator-button |     100 |      100 |     100 |     100 | 
+  CalculatorButton.vue              |     100 |      100 |     100 |     100 | 
+ components/template/Navbar         |     100 |      100 |     100 |     100 | 
+  NavbarComponent.vue               |     100 |      100 |     100 |     100 | 
+ helpers                            |     100 |      100 |     100 |     100 | 
+  numbers.ts                        |     100 |      100 |     100 |     100 | 
+ page/Calculator                    |     100 |      100 |     100 |     100 | 
+  CalculatorPage.vue                |     100 |      100 |     100 |     100 | 111 (C8 BUG)
+  elements.ts                       |     100 |      100 |     100 |     100 | 
+ types                              |     100 |      100 |     100 |     100 | 
+  calculator.ts                     |     100 |      100 |     100 |     100 | 
