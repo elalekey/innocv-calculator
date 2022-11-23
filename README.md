@@ -1,16 +1,55 @@
-# Vue 3 + TypeScript + Vite
+## Technology Stack
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+|               | Nombre     | Versión |
+| ------------- | ---------- | ------- |
+| **Language**  | Typescript | ^4.8.4  |
+| **Framework** | vuejs      | ^3.2.31  | 
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Requirements
 
-## Type Support For `.vue` Imports in TS
+NodeJS | v19.1.0
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+## Recommended IDE setup
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+- [VS Code](https://code.visualstudio.com/)
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [Typescript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
+- [Vitest](https://marketplace.visualstudio.com/items?itemName=ZixuanChen.vitest-explorer)
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+## Installation
+The installation is very simple and consists of a single command, when executed, automatically will install Husky, which is a hooks handler that will be executed after certain rules established in the package.json
+
+```
+npm i
+```
+
+
+## ESLint
+Every time a commit is made the husky hook will run the lint and unit testing. But you can also do it manually with:
+
+```
+npm run lint
+```
+
+## Unit Testing (Vitest)
+Vitest is used for unit testing. Vitest allows us to use the same vite.config.ts for configuration. The unit tests go in the /test folder in the root of the project with extension .test.ts.
+To run them we use the following command to run in Watch mode.
+
+```
+npm run test
+```
+
+To get a code-coverage:
+
+```
+npm run coverage
+```
+
+This will tell us the code-coverage in the terminal and will create a coverage folder where we have the same information but with UI.
+
+## Known errors
+
+ At the moment of obtaining a code-coverage it will mark that there is a line not covered in the 111 of CalculatorPage, this is a library error, specifically C8 with Vitest, caused by the closing of braces.
