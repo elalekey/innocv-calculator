@@ -26,6 +26,10 @@ The installation is very simple and consists of a single command, when executed,
 npm i
 ```
 
+## CI/CD
+The project has code quality pipelines to verify that all unit tests are being approved and that there are no errors in the code to comply with the rules established in the ESLint.
+Folder: .github
+
 
 ## ESLint
 Every time a commit is made the husky hook will run the lint and unit testing. But you can also do it manually with:
